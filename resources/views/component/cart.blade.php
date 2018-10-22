@@ -22,8 +22,7 @@
                       <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
                         <span class="badge">Mango</span>
                         <h6>BUTTON THROUGH STRAP MINI DRESS </h6>
-                        <p class="size">Size: S</p>
-                        <p class="color">Color: Red</p>
+                        <p class="size">Total: 1</p>
                         <p class="price">100.000</p>
                     </div>
                 </a>
@@ -38,8 +37,7 @@
                       <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
                         <span class="badge">Mango</span>
                         <h6>PINNED THROUGH STRAP LONG DRESS </h6>
-                        <p class="size">Size: S</p>
-                        <p class="color">Color: Red</p>
+                        <p class="size">Total: 1</p>
                         <p class="price">100.000</p>
                     </div>
                 </a>
@@ -54,8 +52,7 @@
                       <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
                         <span class="badge">Mango</span>
                         <h6>LINGERIE THROUGH STRAP LARGE DRESS</h6>
-                        <p class="size">Size: S</p>
-                        <p class="color">Color: Red</p>
+                        <p class="size">Total: 1</p>
                         <p class="price">180.000</p>
                     </div>
                 </a>

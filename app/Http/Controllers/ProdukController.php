@@ -10,4 +10,9 @@ class ProdukController extends Controller
     {
         return view('produk/home');
     }
+
+    public function show($id)
+    {
+        return view('produk/show');
+    }
 }

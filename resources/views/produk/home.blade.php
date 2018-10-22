@@ -4,7 +4,7 @@
    <title> OLSHOPKU | PRODUK </title>
 @endsection
 
-@section('produk')
+@section('content')
 <!-- ##### Shop Grid Area Start ##### -->
 <section class="shop_grid_area section-padding-80">
     <div class="container">
@@ -84,9 +84,9 @@
                                     <p class="product-price"><span class="old-price">$75.00</span> $55.00</p>
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="produk/1" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -114,9 +114,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -150,9 +150,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -181,9 +181,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -216,9 +216,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -246,9 +246,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -281,9 +281,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -311,9 +311,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>
@@ -341,9 +341,9 @@
 
                                     <!-- Hover Content -->
                                     <div class="hover-content">
-                                        <!-- Add to Cart -->
+                                        <!-- cek produk -->
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <a href="#" class="btn essence-btn">cek produk</a>
                                         </div>
                                     </div>
                                 </div>

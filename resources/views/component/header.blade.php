@@ -44,8 +44,8 @@
                                     <ul class="dropdown">
                                         <li class="title">NAMA_USER</li>
                                         <li><img src="/img/bg-img/bg-6.jpg" alt=""></li>
-                                        <li><a href="shop.html">EDIT PROFILE</a></li>
-                                        <li><a href="shop.html">LOG OUT</a></li>   
+                                        <li><a href="/profile">EDIT PROFILE</a></li>
+                                        <li><a href="#">LOG OUT</a></li>   
                                     </ul>
                                 </div>
                         </ul>

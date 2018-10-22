@@ -71,16 +71,48 @@
           </li>
 
           <li class="header">MENU ADMIN</li>
-        <li class="treeview">
-            <a href="#">
-              <i class="fa fa-dashboard"></i> <span>ADMIN</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-                
+          <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>ADMIN</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li>
+                      <a href="/admin/cek_bukti_pembayaran">
+                        <i class="fa fa-tasks"></i> <span>Cek Bukti Pembayaran</span>
+                        </span>
+                      </a>
+                      <a href="/admin/cek_bukti_pembayaran">
+                        <i class="fa fa-tasks"></i> <span>Cek Pengiriman Barang</span>
+                        </span>
+                      </a>
+                  </li>
+              </ul>
           </li>
+
+          <li class="header">MENU MANAGER</li>
+          <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>LAPORAN</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="/admin/cek_bukti_pembayaran">
+                    <i class="fa fa-tasks"></i> <span>Laporan Penjualan</span>
+                    </span>
+                  </a>
+                  <a href="/admin/cek_bukti_pembayaran">
+                    <i class="fa fa-tasks"></i> <span>Laporan Stok Barang</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
 
       </ul>
     </section>

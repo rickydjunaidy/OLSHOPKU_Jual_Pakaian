@@ -9,38 +9,24 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    @yield('title') 
+    @yield('title')
 
     <!-- Favicon  -->
     <link rel="icon" href="/img/core-img/favicon.ico">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="/css/core-style.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     @include('component.header')
-    @include('component.cart')      
+    @include('component.cart')   
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb_area bg-img" style="background-image: url(/img/bg-img/breadcumb.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="page-title text-center">
-                        <h2>dresses</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Breadcumb Area End ##### -->
-
-    <!-- ##### Shop Grid Area Start ##### -->
+    <!-- ##### Single Product Details Area Start ##### -->
     @yield('content')
-    <!-- ##### Shop Grid Area Start ##### -->
+    <!-- ##### Single Product Details Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     @include('component/footer')

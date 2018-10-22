@@ -11,7 +11,7 @@ class HomeController extends Controller
         return view ('home/home');
     }
 
-    public function adminIndex()
+    public function adminindex()
     {
         return view ('admin/home/home');
     }
