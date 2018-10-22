@@ -4,10 +4,6 @@
    <title> OLSHOP | ORDER </title>
 @endsection
 
-@section('title')
-   <title> OLSHOP | ORDER </title>
-@endsection
-
 @section('page-title')
     HISTORI PEMESANAN NAMA_USER
 @endsection
