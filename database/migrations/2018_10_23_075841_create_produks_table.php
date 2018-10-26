@@ -22,6 +22,7 @@ class CreateProduksTable extends Migration
             $table->integer('stok_barang');
             $table->string('lokasi_gambar');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('produks', function (Blueprint $table){

@@ -1,18 +1,18 @@
 @extends('admin.layouts.master')
 
 @section('title')
-<title>Web Course | Kategori</title>
+<title>Web Course | Profile</title>
 @endsection
 
 @section('content-header')
 <section class="content-header">
     <h1>
         Dashboard
-        <small>Kategori</small>
+        <small>Profile</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i></a>Dashboard</li>
-        <li class="active">Kategori</li>
+        <li class="active">Profile</li>
     </ol>
 </section>
 @endsection
@@ -22,9 +22,9 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Tabel Kategori</h3>
+                    <h3 class="box-title">Tabel Profile</h3>
                     <div class="box-tools">
-                        <a href="/admin/kategori/add">
+                        <a href="/admin/profile/add">
                             <button class="btn btn-info pull-right">+Add new Data</button>
                         </a>
                     </div>
@@ -34,17 +34,30 @@
                     <table class="table table-striped">
                         <tr>
                             <th>id</th>
-                            <th>nama_kategori</th>
+                            <th>email</th>
+                            <th>password</th>
+                            <th>nama_profile</th>
+                            <th>nama_hak_akses</th>
+                            <th>tanggal_lahir</th>
+                            <th>alamat</th>
+                            <th>lokasi_gambar</th>
+                            <th>action</th>
                         </tr>
                         @foreach($data as $d)
-                            <tr>   
+                            <tr>
                                     <td>{{$d->id}}</td>
-                                    <td><a href="/admin/kategori/show/{{$d->id}}">{{$d->nama_kategori}}</a></td>    
+                                    <td>{{$d->user->email}}</td>
+                                    <td>{{$d->user->password}}</td>
+                                    <td><a href="/admin/profile/show/{{$d->id}}">{{$d->nama_profile}}</a></td> 
+                                    <td>{{$d->hak_akses->nama_hak_akses}}</td>
+                                    <td>{{$d->tanggal_lahir}}</td> 
+                                    <td>{{$d->alamat}}</td> 
+                                    <td>{{$d->lokasi_gambar}}</td> 
                                     <td>
-                                        <form action="/admin/kategori/destroy/{{ $d->id }}" method="post">
+                                        <form action="/admin/profile/destroy/{{ $d->id }}" method="post">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <a class="btn btn-primary" href="/admin/kategori/edit/{{$d->id}}">
+                                            <a class="btn btn-primary" href="/admin/profile/edit/{{$d->id}}">
                                                 Edit
                                             </a>
                                             <button class="btn btn-danger">Delete</button>

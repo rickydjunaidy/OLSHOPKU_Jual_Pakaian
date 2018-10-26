@@ -17,6 +17,7 @@ class CreateHakAksesTable extends Migration
             $table->increments('id');
             $table->string('nama_hak_akses');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

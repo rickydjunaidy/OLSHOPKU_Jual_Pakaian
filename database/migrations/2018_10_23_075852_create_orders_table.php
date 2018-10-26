@@ -19,8 +19,10 @@ class CreateOrdersTable extends Migration
             $table->integer('kurir_id')->unsigned();
             $table->string('status_pembayaran');
             $table->string('status_pengiriman');
+            $table->string('bukti_pembayaran');
             $table->integer('total_harga');            
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('orders', function (Blueprint $table){

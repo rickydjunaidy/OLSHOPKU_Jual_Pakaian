@@ -18,6 +18,7 @@ class CreateKurirsTable extends Migration
             $table->string('nama_kurir');
             $table->integer('no_telepon');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

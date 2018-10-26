@@ -1,18 +1,18 @@
 @extends('admin.layouts.master')
 
 @section('title')
-<title>Web Course | Kategori</title>
+<title>Web Course | Hak Akses</title>
 @endsection
 
 @section('content-header')
 <section class="content-header">
     <h1>
         Dashboard
-        <small>Kategori</small>
+        <small>Hak Akses</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i></a>Dashboard</li>
-        <li class="active">Kategori</li>
+        <li class="active">Hak Akses</li>
     </ol>
 </section>
 @endsection
@@ -22,9 +22,9 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Tabel Kategori</h3>
+                    <h3 class="box-title">Tabel Hak Akses</h3>
                     <div class="box-tools">
-                        <a href="/admin/kategori/add">
+                        <a href="/admin/hak_akses/add">
                             <button class="btn btn-info pull-right">+Add new Data</button>
                         </a>
                     </div>
@@ -34,17 +34,16 @@
                     <table class="table table-striped">
                         <tr>
                             <th>id</th>
-                            <th>nama_kategori</th>
+                            <th>nama_hak_akses</th>
                         </tr>
                         @foreach($data as $d)
                             <tr>   
                                     <td>{{$d->id}}</td>
-                                    <td><a href="/admin/kategori/show/{{$d->id}}">{{$d->nama_kategori}}</a></td>    
-                                    <td>
-                                        <form action="/admin/kategori/destroy/{{ $d->id }}" method="post">
+                                    <td><a href="/admin/hak_akses/show/{{$d->id}}">{{$d->nama_hak_akses}}</a></td>                                      <td>
+                                        <form action="/admin/hak_akses/destroy/{{ $d->id }}" method="post">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <a class="btn btn-primary" href="/admin/kategori/edit/{{$d->id}}">
+                                            <a class="btn btn-primary" href="/admin/hak_akses/edit/{{$d->id}}">
                                                 Edit
                                             </a>
                                             <button class="btn btn-danger">Delete</button>

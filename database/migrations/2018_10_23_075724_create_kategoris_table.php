@@ -17,6 +17,7 @@ class CreateKategorisTable extends Migration
             $table->increments('id');
             $table->string('nama_kategori');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

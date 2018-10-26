@@ -22,10 +22,11 @@ class CreateProfilesTable extends Migration
             $table->string('alamat');
             $table->string('lokasi_gambar');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('profiles', function (Blueprint $table){
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::table('profiles', function (Blueprint $table){

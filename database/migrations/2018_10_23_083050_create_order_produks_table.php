@@ -21,6 +21,7 @@ class CreateOrderProduksTable extends Migration
             $table->string('harga_produk');
             $table->integer('total_harga_produk'); 
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('order_produks', function (Blueprint $table){
