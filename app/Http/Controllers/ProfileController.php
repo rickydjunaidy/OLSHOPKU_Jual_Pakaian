@@ -77,6 +77,11 @@ class ProfileController extends Controller
                 File::delete(public_path('profile/'.$gambar_lama));
             }
 
+            Profile::where('id',$request->id)
+            ->update([
+                'loaksi-gambar' => $filename,
+            ]);
+
         }
 
         Profile::where('id',$request->id)

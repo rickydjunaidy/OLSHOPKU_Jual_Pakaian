@@ -75,10 +75,6 @@ Route::get('/admin/order/edit/{id}', 'OrderController@adminedit');
 Route::put('/admin/order/update', 'OrderController@adminupdate');
 Route::delete('/admin/order/destroy/{id}', 'OrderController@admindestroy');
 
-Route::get('/admin/detailorder', 'DetailOrderController@adminindex');
-Route::get('/admin/detailorder/show/{id}', 'DetailOrderController@adminshow');
-Route::get('/admin/detailorder/add', 'DetailOrderController@adminadd');
-Route::post('/admin/detailorder/store', 'DetailOrderController@adminstore');
-Route::get('/admin/detailorder/edit/{id}', 'DetailOrderController@adminedit');
-Route::put('/admin/detailorder/update', 'DetailOrderController@adminupdate');
-Route::delete('/admin/detailorder/destroy/{id}', 'DetailOrderController@admindestroy');
+Route::get('/admin/detailorder/add/{id}', 'DetailOrderController@adminadd');
+Route::post('/admin/detailorder/store/{id}', 'DetailOrderController@adminstore');
+Route::delete('/admin/detailorder/destroy/{id}/{id_order}', 'DetailOrderController@admindestroy');
