@@ -13,14 +13,19 @@
 //login untuk customer
 Route::get('/', 'HomeController@index');
 Route::get('/produk', 'ProdukController@index');
-Route::get('/produk/{id}', 'ProdukController@show');
+Route::get('/produk/show/{id}', 'ProdukController@show');
 
 Route::get('/profile', 'ProfileController@index');
+Route::post('/profile/update', 'ProfileController@update');
 
 Route::get('/order', 'OrderController@index');
-Route::get('/pembayaran/{id}', 'OrderController@pembayaran');
+Route::get('/order/checkout/{id}', 'OrderController@checkout');
+Route::get('/order/pembayaran/{id}', 'OrderController@pembayaran');
+Route::post('/order/pembayaran/upload', 'OrderController@uploadpembayaran');
+Route::get('/order/pembayaran/cancel/cancelpembayaran', 'OrderController@cancelpembayaran');
 
-Route::get('/detail_order/{id}', 'DetailOrderController@index');
+Route::post('/detailorder/store', 'DetailOrderController@store');
+Route::get('/detailorder/destroy/{id}', 'DetailOrderController@destroy');
 
 //login untuk admin
 Route::get('/admin', 'HomeController@adminindex');
@@ -74,7 +79,13 @@ Route::post('/admin/order/store', 'OrderController@adminstore');
 Route::get('/admin/order/edit/{id}', 'OrderController@adminedit');
 Route::put('/admin/order/update', 'OrderController@adminupdate');
 Route::delete('/admin/order/destroy/{id}', 'OrderController@admindestroy');
+Route::get('/admin/cekbuktipembayaran', 'OrderController@admincekbuktipembayaran');
+Route::get('/admin/cekpengiriman', 'OrderController@admincekpengiriman');
 
 Route::get('/admin/detailorder/add/{id}', 'DetailOrderController@adminadd');
 Route::post('/admin/detailorder/store/{id}', 'DetailOrderController@adminstore');
 Route::delete('/admin/detailorder/destroy/{id}/{id_order}', 'DetailOrderController@admindestroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

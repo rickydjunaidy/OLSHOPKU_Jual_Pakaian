@@ -47,7 +47,7 @@
                                 <label>nama_kategori</label>
                                 <select class="form-control" name="kategori_id">
                                     @foreach ($kategori as $kategori)
-                                        <option  value="{{$kategori->id}}">{{$kategori->nama_kategori}}</option>
+                                        <option value="{{$kategori->id}}" <?php if($data->kategori->nama_kategori == $kategori->nama_kategori) {echo "selected";} ?>>{{$kategori->nama_kategori}}</option>
                                     @endforeach
                                 </select>
                                 <label>nama_produk</label>

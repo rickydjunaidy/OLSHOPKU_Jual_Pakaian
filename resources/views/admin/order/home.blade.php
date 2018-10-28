@@ -49,7 +49,14 @@
                                     <td>{{$d->kurir->nama_kurir}}</td>
                                     <td>{{$d->status_pembayaran}}</td>
                                     <td>{{$d->status_pengiriman}}</td>
-                                    <td>{{$d->bukti_pembayaran}}</td> 
+                                    <td>
+                                        @if($d->bukti_pembayaran == "awal")
+                                        user belum upload bukti pembayaran.  
+                                        @else
+                                        <input type="button" class="form-control" name="bukti_pembayaran" value="CEK BUKTI PEMBAYARAN"
+                                        placeholder="CEK bukti_pembayaran" onclick="location.href='http://localhost:8000/storage/produk/{{$d->bukti_pembayaran}}';" required>
+                                        @endif      
+                                    </td> 
                                     <td>{{$d->total_harga}}</td> 
                                     <td>
                                         <form action="/admin/order/destroy/{{ $d->id }}" method="post">

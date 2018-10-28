@@ -12,10 +12,9 @@
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="produk.html">Shop</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="contact.html">Cek Order</a></li>
-                                <li><a href="contact.html">Profile</a></li>
+                                <li><a href="/produk">Shop</a></li>
+                                <li><a href="/order">Cek Order</a></li>
+                                <li><a href="/">Contact</a></li>
                             </ul>
                         </div>
                     </div>

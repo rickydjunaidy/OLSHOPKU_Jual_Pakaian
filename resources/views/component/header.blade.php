@@ -18,7 +18,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="/produk">Shop</a>
+                            <li><a href="/produk">Shop</a></li>
                             <li><a href="/order">Cek Order</a></li>
                             <li><a href="/">Contact</a></li>
                         </ul>
@@ -39,20 +39,46 @@
                 <!-- User Login Info -->
                 <div class="classynav">
                         <ul>
-                            <li><a href="#">NAMA_USER</a>
+                            <li><a href="#">{{session('user')->profile->nama_profile}}</a>
                                 <div class="megamenu">
                                     <ul class="dropdown">
-                                        <li class="title">NAMA_USER</li>
-                                        <li><img src="/img/bg-img/bg-6.jpg" alt=""></li>
+                                        <li class="title">{{session('user')->profile->nama_profile}}</li>
+                                        <li>
+                                            @if(session('user')->profile->lokasi_gambar == "awal")
+                                                <img src="/img/bg-img/bg-6.jpg" alt="">
+                                            @else
+                                            <img src="{{ asset('/storage/profile/'.session("user")->profile->lokasi_gambar.'')}}" alt="">
+                                            @endif
+                                        </li>
                                         <li><a href="/profile">EDIT PROFILE</a></li>
-                                        <li><a href="#">LOG OUT</a></li>   
+                                        <li>
+                                            <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                  
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </li>   
                                     </ul>
                                 </div>
+                            </li>
                         </ul>
                 </div>
                 <!-- Cart Area -->
                 <div class="cart-area">
-                    <a href="#" id="essenceCartBtn"><img src="/img/core-img/bag.svg" alt=""> <span>3</span></a>
+                    <a href="#" id="essenceCartBtn"><img src="/img/core-img/bag.svg" alt=""> <span>
+                        <?php
+                        $jumlah_keranjang = 0;
+                        foreach(session('orderterbaru')->orderproduk as $data)
+                        {
+                            $jumlah_keranjang++;
+                        }
+                        echo $jumlah_keranjang;
+                        ?>    
+                    </span></a>
                 </div>
             </div>
 

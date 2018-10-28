@@ -52,8 +52,10 @@
                                         placeholder="nama_kurir" required min="0" readonly>
                                 <label>status_pembayaran</label>
                                 <select class="form-control" name="status_pembayaran">
-                                        <option value="LUNAS" <?php if($data->status_pembayaran == "BELUM LUNAS") {echo "selected";} ?>>LUNAS</option>
+                                        <option value="LUNAS" <?php if($data->status_pembayaran == "LUNAS") {echo "selected";} ?>>LUNAS</option>
                                         <option value="BELUM LUNAS" <?php if($data->status_pembayaran == "BELUM LUNAS") {echo "selected";} ?>>BELUM LUNAS</option>
+                                        <option value="ADMIN CHECK" <?php if($data->status_pembayaran == "ADMIN CHECK") {echo "selected";} ?>>ADMIN CHECK</option>
+                                        <option value="READY" <?php if($data->status_pembayaran == "READY") {echo "selected";} ?>>READY</option>
                                 </select>
                                 <label>status_pengiriman</label>
                                 <select class="form-control" name="status_pengiriman">
@@ -63,7 +65,7 @@
                                 </select>
                                 <label>bukti_pembayaran</label>
                                 <input type="button" class="form-control" name="bukti_pembayaran" value="CEK BUKTI PEMBAYARAN"
-                                    placeholder="CEK bukti_pembayaran" onclick="location.href='http://localhost:8000/storage/produk/{{$data->bukti_pembayaran}}';" required>
+                                    placeholder="CEK bukti_pembayaran" onclick="location.href='http://localhost:8000/storage/bukti_pembayaran/{{$data->bukti_pembayaran}}';" required>
                                 <label>total_harga</label>
                                 <input type="number" class="form-control" name="total_harga" value="{{$data->total_harga}}"
                                     placeholder="total_harga" required min="0" readonly>

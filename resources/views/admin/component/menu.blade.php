@@ -4,12 +4,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-
           <!--edit this-->
-          <img src="/dist/img/pp.jpg" class="img-circle" alt="User Image">
+          <img src="{{ asset('/storage/profile/'.session('user')->profile->lokasi_gambar)}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>NAMA_ADMIN</p>
+          <p>{{session('user')->profile->nama_profile}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -80,11 +79,11 @@
               </a>
               <ul class="treeview-menu">
                   <li>
-                      <a href="/admin/cek_bukti_pembayaran">
+                      <a href="/admin/cekbuktipembayaran">
                         <i class="fa fa-tasks"></i> <span>Cek Bukti Pembayaran</span>
                         </span>
                       </a>
-                      <a href="/admin/cek_bukti_pembayaran">
+                      <a href="/admin/cekpengiriman">
                         <i class="fa fa-tasks"></i> <span>Cek Pengiriman Barang</span>
                         </span>
                       </a>

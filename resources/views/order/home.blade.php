@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-title')
-    HISTORI PEMESANAN NAMA_USER
+    HISTORI PEMESANAN {{session('user')->profile->nama_profile}}
 @endsection
     
 @section('content')
@@ -18,24 +18,44 @@
             <thead>
             <tr>
             <th>id</th>
-            <th>total_harga</th>
+            <th>nama_kurir</th>
             <th>status_pembayaran</th>
             <th>status_pengiriman</th>
             <th>bukti_pembayaran</th>
-            <th>kurir</th>
-            <th>alamat</th>
+            <th>total_harga</th>
+            <th>ACTION</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td><a href="/detail_order/1">380.000</a></td>
-                <td>BELUM LUNAS</td>
-                <td>BELUM DIANTAR</td>
-                <td>BELUM UPLOAD</td>
-                <td>PORTER INDONESIA</td>
-                <td>JL. SUKABUMI NO 30</td>
-            </tr>
+            @foreach($data as $data)
+                <tr>
+                    <td><a href="/order/checkout/{{$data->id}}">{{$data->id}}</a></td>
+                    <td>{{$data->kurir->nama_kurir}}</td>
+                    <td>{{$data->status_pembayaran}}</td>
+                    <td>{{$data->status_pengiriman}}</td>
+                    <td>{{$data->bukti_pembayaran}}</td>
+                    <td>{{$data->total_harga}}</td>
+                    <th>
+                        @if($data->status_pembayaran == 'READY')
+                        
+                            <a href="/order/pembayaran/{{$data->id}}" class="btn essence-btn">upload data pembayaran</a>
+                        
+                        @elseif($data->status_pembayaran == 'LUNAS')
+                        
+                            <a href="/order/checkout/{{$data->id}}" class="btn essence-btn">cek histori</a>
+                        
+                        @elseif ($data->status_pembayaran == 'BELUM LUNAS')
+                        
+                            <a href="/order/checkout/{{$data->id}}" class="btn essence-btn">checkout</a>
+                        
+                        @elseif ($data->status_pembayaran == 'ADMIN CHECK')
+                        
+                            <a href="/order/checkout/{{$data->id}}" class="btn essence-btn">cek histori</a>
+
+                        @endif
+                    </th>
+                </tr>
+            @endforeach
         </table>
 
 @endsection

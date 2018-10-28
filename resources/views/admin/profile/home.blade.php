@@ -60,7 +60,7 @@
                                             <a class="btn btn-primary" href="/admin/profile/edit/{{$d->id}}">
                                                 Edit
                                             </a>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-danger" disable>Delete</button>
                                         </form>
                                     </td>
                             </tr>

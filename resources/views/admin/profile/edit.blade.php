@@ -44,15 +44,11 @@
                     <div class="box-body">
                         <div class="form-group">
                                 <label>nama_user</label>
-                                <select class="form-control" name="user_id">
-                                    @foreach ($user as $nu)
-                                        <option  value="{{$nu->id}}">{{$nu->name}}</option>
-                                    @endforeach
-                                </select>
                                 <label>nama_hak_akses</label>
                                 <select class="form-control" name="hak_akses_id">
                                     @foreach ($hak_akses as $ha)
-                                        <option value="{{$ha->id}}">{{$ha->nama_hak_akses}}</option>
+                                        <option value="{{$ha->id}}" <?php if($data->hak_akses->nama_hak_akses == $ha->nama_hak_akses) {echo "selected";} ?> >{{$ha->nama_hak_akses}}</option>
+                                        
                                     @endforeach
                                 </select>
                                 <label>nama_profile</label>

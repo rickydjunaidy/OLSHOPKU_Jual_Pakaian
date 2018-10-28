@@ -2,16 +2,96 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\OrderProduk;
 use App\Produk;
 use App\Order;
-
 use App\Profile;
+
+use Illuminate\Support\Facades\Session;
 
 class DetailOrderController extends Controller
 {
-    
+    //untuk customer
+    public function store(Request $request)
+    {
+        if(session('orderterbaru')->status_pembayaran == "READY")
+        {
+            $data = Order::where('profile_id',session('user')->profile->id)->get();
+            return view('order/home',['data'=>$data]);
+        }
+
+        $data = OrderProduk::where('produk_id',$request->id_produk)->where('order_id',session('orderterbaru')->id)->first();
+
+        //dd($request->harga_produk);
+
+        if($data == NULL){ //input pertama kali, tidak ada produk kedobel
+            OrderProduk::create([
+                'produk_id' => $request->id_produk,
+                'order_id' => session('orderterbaru')->id,
+                'jumlah_beli' =>$request->jumlah_beli,
+                'harga_produk' =>$request->harga_produk,
+                'total_harga_produk' => $request->jumlah_beli * $request->harga_produk,
+            ]);
+        }
+        else { //add data berulang
+            $jumlah_beli = $data->jumlah_beli; //ambil di tabel data sebelumnya
+            $jumlah_beli += $request->jumlah_beli; //ditambahkan dengan data yang baru
+
+            OrderProduk::where('produk_id',$request->id_produk)->where('order_id',session('orderterbaru')->id)->update([
+                'jumlah_beli' =>$jumlah_beli,
+                'harga_produk' => $request->harga_produk,
+                'total_harga_produk' => $jumlah_beli * $request->harga_produk,
+            ]);
+        }
+
+        //hitung total di semua orderproduk berdasarkan order_id
+        $total = OrderProduk::where('order_id',session('orderterbaru')->id)->get();
+        $hasil = 0;
+
+        foreach($total as $total)
+        {
+            $hasil += $total->total_harga_produk;
+        }
+
+        Order::where('id',session('orderterbaru')->id)
+        ->update([
+            'total_harga' => $hasil
+        ]);
+        /////////////////////////////////////////////////////////
+
+        $orderTerbaru = Order::where('profile_id',session('user')->profile->id)->orderBy('id', 'DESC')->first();
+        session(['orderterbaru'=>$orderTerbaru]);
+        
+        return redirect('/produk');
+    }
+
+    public function destroy($id)
+    {
+        if(session('orderterbaru')->status_pembayaran == "READY")
+        {
+            $data = Order::where('profile_id',session('user')->profile->id)->get();
+            return view('order/home',['data'=>$data]);
+        }
+
+        $total = Order::where('id',session('orderterbaru')->id)->first()->total_harga;
+        $total2 = OrderProduk::where('id',$id)->first()->total_harga_produk;
+        $total -= $total2;
+
+        Order::where('id',session('orderterbaru')->id)->update([
+            'total_harga' => $total
+        ]);
+
+        OrderProduk::where('id', $id)->delete();
+
+        $orderTerbaru = Order::where('profile_id',session('user')->profile->id)->orderBy('id', 'DESC')->first();
+        session(['orderterbaru'=>$orderTerbaru]);
+
+        return redirect('/produk');
+    }
+
+    //untuk admin
     public function adminshow($id)
     {
         $data = Order::where('id',$id)->first();

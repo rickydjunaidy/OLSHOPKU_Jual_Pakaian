@@ -8,6 +8,21 @@ use File;
 
 class ProdukController extends Controller
 {
+    //untuk customer
+    public function index()
+    {
+        $data = Produk::all();
+        $data = Produk::paginate(9);
+        return view('produk/home',['data'=>$data]);
+    }
+
+    public function show($id)
+    {
+        $data = Produk::where('id',$id)->first();
+        return view('produk/show',['data'=>$data]);
+    }
+
+    //untuk admin
     public function adminindex()
     {
         $data = Produk::all();
